@@ -12,6 +12,7 @@ ARG BUILD_PACKAGES="\
 	devscripts \
 	dh-autoreconf \
 	git \
+	python \
 	libtbb-dev"
 
 # install packages
@@ -54,6 +55,13 @@ RUN \
 
 # add local files
 COPY root/ /
+
+#Prepare for NzbToMedia Requirements
+git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git && \
+
+# copy local files
+COPY root/ /
+
 
 # ports and volumes
 EXPOSE 8080 9090
