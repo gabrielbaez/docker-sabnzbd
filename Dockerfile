@@ -37,9 +37,7 @@ RUN \
  git clone https://github.com/jcfp/debpkg-par2tbb.git \
 	/tmp/par2 && \
  cd /tmp/par2 && \
- cd /app && \
- git clone https://github.com/clinton-hall/nzbToMedia.git \
-
+ 
  uscan --force-download && \
  dpkg-buildpackage -S -us -uc -d && \
  dpkg-source -x ../par2cmdline-tbb_*.dsc && \
@@ -48,8 +46,9 @@ RUN \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
 
 #Prepare for NzbToMedia Requirements
-#cd /app 
-#git clone https://github.com/clinton-hall/nzbToMedia.git \
+cd /app && \
+git clone https://github.com/clinton-hall/nzbToMedia.git \
+
 
 # cleanup
 # apt-get purge -y --auto-remove \
