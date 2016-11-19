@@ -6,7 +6,7 @@ mkdir -p \
 	/incomplete-downloads
 
 # permissions
-chown abc:abc \
+chown -R abc:abc \
 	/downloads \
 	/incomplete-downloads \
 	/nzbtomedia
