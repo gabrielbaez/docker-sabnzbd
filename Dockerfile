@@ -45,19 +45,20 @@ RUN \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
 
 #Prepare for NzbToMedia Requirements
-cd /app 
-git clone https://github.com/clinton-hall/nzbToMedia.git \
+#cd /app 
+#git clone https://github.com/clinton-hall/nzbToMedia.git \
 
 # cleanup
- apt-get purge -y --auto-remove \
-	$BUILD_PACKAGES && \
- apt-get clean && \
- rm -rf \
-	/tmp/* \
-	/var/lib/apt/lists/* \
-	/var/tmp/*
+# apt-get purge -y --auto-remove \
+#	$BUILD_PACKAGES && \
+# apt-get clean && \
+# rm -rf \
+#	/tmp/* \
+#	/var/lib/apt/lists/* \
+#	/var/tmp/*
 
-
+cd /app
+git clone https://github.com/clinton-hall/nzbToMedia.git \
 
 # add local files
 COPY root/ /
