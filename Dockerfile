@@ -47,7 +47,7 @@ RUN \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
 
 #mkdir -p /nzbtomedia &&\
- git -C /nzbtomedia clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
+ git -C /nzbtomedia clone -q  https://github.com/clinton-hall/nzbToMedia.git  && \
 
 
 # cleanup
