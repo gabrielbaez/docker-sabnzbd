@@ -45,7 +45,8 @@ RUN \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
 
 #Prepare for NzbToMedia Requirements
-#git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
+cd /app 
+git -C . clone -q  https://github.com/clinton-hall/nzbToMedia.git  && \
 
 # cleanup
  apt-get purge -y --auto-remove \
