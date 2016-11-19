@@ -54,7 +54,7 @@ RUN \
 	/var/tmp/*
 
 #Prepare for NzbToMedia Requirements
-git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git && \
+git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
 
 # add local files
 COPY root/ /
