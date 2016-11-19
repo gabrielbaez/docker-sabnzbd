@@ -53,14 +53,13 @@ RUN \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
 
-# add local files
-COPY root/ /
-
 #Prepare for NzbToMedia Requirements
 git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git && \
 
-# copy local files
+# add local files
 COPY root/ /
+
+
 
 
 # ports and volumes
