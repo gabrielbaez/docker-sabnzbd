@@ -26,6 +26,8 @@ RUN \
 	git \
 	unrar \
 	unzip && \
+#Prepare for NzbToMedia Requirements
+git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
 
 # install build packages
  apt-get install -y \
@@ -53,8 +55,7 @@ RUN \
 	/var/lib/apt/lists/* \
 	/var/tmp/*
 
-#Prepare for NzbToMedia Requirements
-git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
+
 
 # add local files
 COPY root/ /
