@@ -50,9 +50,9 @@ RUN \
 
 
 # cleanup
- apt-get purge -y --auto-remove \
-	$BUILD_PACKAGES && \
- apt-get clean && \
+ #apt-get purge -y --auto-remove \
+#	$BUILD_PACKAGES && \
+# apt-get clean && \
  rm -rf \
 	/tmp/* \
 	/var/lib/apt/lists/* \
