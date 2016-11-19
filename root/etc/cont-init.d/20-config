@@ -8,5 +8,6 @@ mkdir -p \
 # permissions
 chown abc:abc \
 	/downloads \
-	/incomplete-downloads
+	/incomplete-downloads \
+	/nzbtomedia
 
