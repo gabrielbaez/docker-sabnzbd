@@ -1,11 +1,11 @@
 FROM lsiobase/xenial
 MAINTAINER sparklyballs
 
-# environment settings
+# environment settings
 ARG DEBIAN_FRONTEND="noninteractive"
 ENV HOME="/config"
 
-# build packages as variable
+# build packages as variable
 ARG BUILD_PACKAGES="\
 	build-essential \
 	debhelper \
@@ -14,7 +14,7 @@ ARG BUILD_PACKAGES="\
 	python \
 	libtbb-dev"
 
-# install packages
+# install packages
 RUN \
  echo "deb http://ppa.launchpad.net/jcfp/ppa/ubuntu xenial main" | tee -a /etc/apt/sources.list && \
  apt-key adv --keyserver hkp://keyserver.ubuntu.com:11371 --recv-keys 0x98703123E0F52B2BE16D586EF13930B14BB9F05F && \
@@ -24,15 +24,14 @@ RUN \
 	libtbb2 \
 	sabnzbdplus \
 	git \
-	vim  \
 	unrar \
 	unzip && \
 
-# install build packages
+# install build packages
  apt-get install -y \
 	$BUILD_PACKAGES && \
 
-# compile par2 multicore
+# compile par2 multicore
  apt-get remove -y \
 	par2 && \
  git clone https://github.com/jcfp/debpkg-par2tbb.git \
@@ -47,10 +46,10 @@ RUN \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
 
 #mkdir -p /nzbtomedia &&\
- git -C /nzbtomedia clone -q  https://github.com/clinton-hall/nzbToMedia.git  && \
+ git -C /nzbtomedia clone -q  https://github.com/clinton-hall/nzbToMedia.git && \
 
 
-# cleanup
+# cleanup
  apt-get purge -y --auto-remove \
 	$BUILD_PACKAGES && \
  apt-get clean && \
@@ -61,7 +60,7 @@ RUN \
 
 
 
-# add local files
+# add local files
 COPY root/ /
 
 
