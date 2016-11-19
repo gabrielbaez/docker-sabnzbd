@@ -11,7 +11,6 @@ ARG BUILD_PACKAGES="\
 	debhelper \
 	devscripts \
 	dh-autoreconf \
-	git-core \
 	python \
 	libtbb-dev"
 
@@ -24,6 +23,7 @@ RUN \
 	p7zip-full \
 	libtbb2 \
 	sabnzbdplus \
+	git \
 	unrar \
 	unzip && \
 
