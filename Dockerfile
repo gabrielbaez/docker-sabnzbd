@@ -12,7 +12,6 @@ ARG BUILD_PACKAGES="\
 	devscripts \
 	dh-autoreconf \
 	python \
-	git \
 	libtbb-dev"
 
 # install packages
@@ -28,12 +27,10 @@ RUN \
 	unrar \
 	unzip && \
 
-
 # install build packages
  apt-get install -y \
 	$BUILD_PACKAGES && \
-#Prepare for NzbToMedia Requirements
-git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
+
 # compile par2 multicore
  apt-get remove -y \
 	par2 && \
@@ -46,6 +43,9 @@ git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
  cd /tmp/par2/par2cmdline-tbb-* && \
  dpkg-buildpackage -b -us -uc && \
  dpkg -i $(readlink -f ../par2-tbb_*.deb) && \
+
+#Prepare for NzbToMedia Requirements
+git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git  \
 
 # cleanup
  apt-get purge -y --auto-remove \
