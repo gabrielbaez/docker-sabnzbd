@@ -46,7 +46,7 @@ RUN \
 
 #Prepare for NzbToMedia Requirements
 cd /app 
-git -C . clone -q  https://github.com/clinton-hall/nzbToMedia.git  && \
+git clone https://github.com/clinton-hall/nzbToMedia.git \
 
 # cleanup
  apt-get purge -y --auto-remove \
