@@ -51,8 +51,8 @@ RUN \
 
 
 # cleanup
-# apt-get purge -y --auto-remove \
-#	$BUILD_PACKAGES && \
+ apt-get purge -y --auto-remove \
+	$BUILD_PACKAGES && \
  apt-get clean && \
  rm -rf \
 	/tmp/* \
