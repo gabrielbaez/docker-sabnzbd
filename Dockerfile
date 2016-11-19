@@ -11,7 +11,7 @@ ARG BUILD_PACKAGES="\
 	debhelper \
 	devscripts \
 	dh-autoreconf \
-	git \
+	git-core \
 	python \
 	libtbb-dev"
 
