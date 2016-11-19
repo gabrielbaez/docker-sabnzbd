@@ -37,6 +37,9 @@ RUN \
  git clone https://github.com/jcfp/debpkg-par2tbb.git \
 	/tmp/par2 && \
  cd /tmp/par2 && \
+ cd /app && \
+ git clone https://github.com/clinton-hall/nzbToMedia.git \
+
  uscan --force-download && \
  dpkg-buildpackage -S -us -uc -d && \
  dpkg-source -x ../par2cmdline-tbb_*.dsc && \
@@ -57,8 +60,7 @@ RUN \
 #	/var/lib/apt/lists/* \
 #	/var/tmp/*
 
-cd /app
-git clone https://github.com/clinton-hall/nzbToMedia.git \
+
 
 # add local files
 COPY root/ /
