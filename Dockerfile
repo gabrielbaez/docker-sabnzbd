@@ -48,8 +48,9 @@ RUN \
 
  #git -C /app clone -q  https://github.com/clinton-hall/nzbToMedia.git && \
  cd /app \
+ ls -ltrha /app \
  git clone https://github.com/clinton-hall/nzbToMedia.git  \
- 
+
 # cleanup
  apt-get purge -y --auto-remove \
 	$BUILD_PACKAGES && \
